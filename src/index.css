@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}
+
+/* ── Stronger card borders throughout the app ── */
+@layer utilities {
+  /* Make all border-gray-100 more visible */
+  .dark .border-gray-100 { border-color: rgb(75 85 99); }  /* gray-600 in dark */
+}
+
+/* Globally strengthen table borders */
+@layer base {
+  table th {
+    border-bottom-width: 2px;
+  }
+  .divide-y > * + * {
+    border-top-width: 1px;
+    border-color: rgb(209 213 219); /* gray-300 */
+  }
+  .dark .divide-y > * + * {
+    border-color: rgb(75 85 99); /* gray-600 */
+  }
+}
